@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Ruta principal que sirve el index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/views/index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 // Ruta para subir y validar archivos
