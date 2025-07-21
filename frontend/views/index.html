@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gobierno de Datos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>Sistema de Gobierno de Datos</h1>
+
+    <h2>Flujo 1: Validación de Calidad de Archivos</h2>
+    <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file-input">
+        <button type="submit">Subir y Validar</button>
+    </form>
+    <div id="validation-result"></div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
