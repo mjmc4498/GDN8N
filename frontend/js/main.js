@@ -14,15 +14,25 @@ document.getElementById('upload-form').addEventListener('submit', async (event) 
         if (response.ok) {
             const result = await response.json();
             validationResultDiv.innerHTML = `
-                <h3>Resultado de la Validación</h3>
-                <p><strong>Archivo:</strong> ${result.fileName}</p>
-                <p><strong>Tamaño:</strong> ${result.size} bytes</p>
-                <p><strong>Estado:</strong> ${result.status}</p>
+                <div class="alert alert-success">
+                    <h4 class="alert-heading">Resultado de la Validación</h4>
+                    <p><strong>Archivo:</strong> ${result.fileName}</p>
+                    <p><strong>Tamaño:</strong> ${result.size} bytes</p>
+                    <p class="mb-0"><strong>Estado:</strong> ${result.status}</p>
+                </div>
             `;
         } else {
-            validationResultDiv.innerHTML = `<p>Error en la validación: ${response.statusText}</p>`;
+            validationResultDiv.innerHTML = `
+                <div class="alert alert-danger">
+                    <strong>Error en la validación:</strong> ${response.statusText}
+                </div>
+            `;
         }
     } catch (error) {
-        validationResultDiv.innerHTML = `<p>Error en la conexión: ${error.message}</p>`;
+        validationResultDiv.innerHTML = `
+            <div class="alert alert-danger">
+                <strong>Error en la conexión:</strong> ${error.message}
+            </div>
+        `;
     }
 });
